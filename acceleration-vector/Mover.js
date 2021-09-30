@@ -3,7 +3,7 @@ class Mover {
 		this.pos = createVector(x, y);
 		this.vel = p5.Vector.random2D();
 		this.vel.mult(random(3));
-		// Force = Manitude * Acceleration
+		// Force = Mass * Acceleration
 		// this.acc = p5.Vector.random2D();
 		// this.acc.setMag(0.01);
 	}
