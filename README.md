@@ -10,3 +10,6 @@
 
 ### Gravity and wind
 &ensp;**Gravity**를 구현하기 위해 *Accelerator*에 중력값을 넣고 *Velocity*에 *Accelerator*의 값을 넣는다. 처음 지정한 *Vector* 좌표에서 *Accelerator* 크기 만큼 누적되는 *Velocity*의 값이 현재의 *Position*에 저장되고 공은 바닥으로 향한다.<br/>&ensp;바닥과 공이 만났을 때, *Position*의 값은 바닥 값의 좌표로 고정되어 값의 변형이 일어나고 *Velocity*의 값은 역방향으로 전환되어 위로 향한다. *Velocity*의 값이 0을 지나 양의 값을 갖게 되면 운동은 반복되나 점차 바닥 값으로 수렴하게 되고 이를 통해 *Gravity*는 구현된다.<br/><br/>&ensp;**Wind**의 경우 **Gravity**와 유사한 형태지만 x방향으로 *Force*가 주어지고 **Gravity**와 **Wind**의 *Force*가 동시에 영향을 받을 수 있도록 *Vector*의 합 형태로 주어져야 한다. 
+
+### Friction force
+&ensp;**Friction force** = -1(Negative: 역방향) * μ(Coefficient friction: 마찰계수) *  N(Normal force) * Velocity unit vector<br/><br/>&ensp;떨어지는 속도값(*Velocity*)이 바닥에 닿으면 점차 줄어들게 하기 위해 *Velocity*의 값을 정규화하고 역방향으로 설정한다. 여기에 작용하는 마찰계수와 수직항력(Normal force)이 정규화된 역방향의 *Velocity*값에 기반한 힘을 가지도록 하고 바닥에 닿을 때마다 힘이 작용하게 한다.
